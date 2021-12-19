@@ -1,0 +1,63 @@
+.transactionHistory {
+  margin: 0 auto 30px;
+  width: 95%;
+  min-width: 320px;
+  max-width: 500px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+}
+
+.transactionHistory > thead {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #00bcd5;
+}
+
+.transactionHistory th {
+  padding: 15px;
+  border: none;
+  border-left: 1px solid #8effff;
+  border-right: 1px solid #8effff;
+}
+.transactionHistory td {
+  padding: 15px;
+  border: none;
+  border-left: 1px solid #e0e5e8;
+  border-right: 1px solid #e0e5e8;
+}
+
+.transactionHistory td {
+  text-align: center;
+}
+
+.transactionHistory thead th:first-child {
+  border-top-left-radius: 5px;
+}
+
+.transactionHistory thead th:last-child {
+  border-top-right-radius: 5px;
+}
+
+.transactionHistory tbody tr:nth-child(2n + 1) {
+  background-color: #fff;
+}
+
+.transactionHistory tbody tr:nth-child(2n) {
+  background-color: #eceaea;
+}
+
+.transactionHistory tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+
+.transactionHistory tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+.transactionHistory tbody tr:hover {
+  background-color: rgba(229, 242, 172, 0.748);
+}

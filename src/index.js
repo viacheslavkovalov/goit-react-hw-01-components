@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ModernNormalize from 'react-modern-normalize';
+import 'modern-normalize/modern-normalize.css';
 import './index.css';
 import App from './App';
 
 ReactDOM.render(
-  <ModernNormalize>
+  <React.StrictMode>
     <App />
-  </ModernNormalize>,
+  </React.StrictMode>,
   document.getElementById('root'),
 );
 

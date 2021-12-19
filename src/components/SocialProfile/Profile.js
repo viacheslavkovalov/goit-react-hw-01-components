@@ -1,34 +1,49 @@
 import PropTypes from 'prop-types';
+import UserDefaultImage from '../../images/defaultImage.png';
 import s from './Profile.module.css';
+import numberWithCommas from '../../adds/numberWithCommas';
 
-function Profile({ userName, tag, location, avatar, stats }) {
+function Profile({ user }) {
+  const {
+    avatar = UserDefaultImage,
+    username,
+    tag,
+    location,
+    stats: { followers, views, likes },
+  } = user;
   return (
     <div className={s.profile}>
       <div className={s.description}>
-        <img src={avatar} alt="User avatar" className={s.avatar} />
-        <p className={s.name}>{userName}</p>
-        <p class="tag">@pmarica</p>
-        <p class="location">Salvador, Brasil</p>
+        <img src={avatar} alt="User avatar" className={s.avatar} width="150" />
+        <p className={s.name}>{username}</p>
+        <p className={s.text}>@{tag}</p>
+        <p className={s.text}>{location}</p>
       </div>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">1000</span>
+      <ul className={s.stats}>
+        <li className={s.item}>
+          <span className={s.label}>Followers</span>
+          <span className={s.quantity}>{numberWithCommas(followers)}</span>
         </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">2000</span>
+        <li className={s.item}>
+          <span className={s.label}>Views</span>
+          <span className={s.quantity}>{numberWithCommas(views)}</span>
         </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">3000</span>
+        <li className={s.item}>
+          <span className={s.label}>Likes</span>
+          <span className={s.quantity}>{numberWithCommas(likes)}</span>
         </li>
       </ul>
     </div>
   );
 }
 
-Profile.propTypes = {};
+Profile.propTypes = {
+  avatar: PropTypes.string,
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  stats: PropTypes.objectOf(PropTypes.number),
+};
 
 export default Profile;
